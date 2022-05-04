@@ -9,14 +9,27 @@ namespace Day_9_AddressBook
     internal class CreatenewContact
     {
         //Init Local variables
-        String? FirstName;
-        String? LastName;
-        String? Email_Id;
-        String? PhoneNumber;
-        String? Address;
-        String? City;
-        String? State;
-        String? ZipCode;
+        public String FirstName;
+        public String LastName;
+        public String Email_Id;
+        public String PhoneNumber;
+        public String Address;
+        public String City;
+        public String State;
+        public String ZipCode;
+
+        public CreatenewContact(String FirstName,String LastName,String Email_Id,String PhoneNumber,String Address,String City,String State,String ZipCode)
+        { 
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.Email_Id = Email_Id;   
+            this.PhoneNumber = PhoneNumber;
+            this.Address = Address;
+            this.City = City;
+            this.State = State;
+            this.ZipCode = ZipCode;
+
+        }
       
 
         public void GetDetails()
