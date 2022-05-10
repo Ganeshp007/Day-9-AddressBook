@@ -25,28 +25,28 @@ namespace Day_9_AddressBook
         {
             Person person = new Person();
 
-            Console.Write("Enter First Name: ");
+            Console.Write("\nEnter First Name: ");
             person.FirstName = Console.ReadLine();
 
-            Console.Write("Enter Last Name: ");
+            Console.Write("\nEnter Last Name: ");
             person.LastName = Console.ReadLine();
 
-            Console.Write("Enter Address : ");
+            Console.Write("\nEnter Address : ");
             person.Addresses = Console.ReadLine();
 
-            Console.Write("Enter City : ");
+            Console.Write("\nEnter City : ");
             person.City = Console.ReadLine();
 
-            Console.Write("Enter State : ");
+            Console.Write("\nEnter State : ");
             person.State = Console.ReadLine();
 
-            Console.Write("Enter ZipCode: ");
+            Console.Write("\nEnter ZipCode: ");
             person.PinCode = Console.ReadLine();
 
-            Console.Write("Enter Phone Number: ");
+            Console.Write("\nEnter Phone Number: ");
             person.PhoneNum = Console.ReadLine();
 
-            Console.Write("Enter EmailId: ");
+            Console.Write("\nEnter EmailId: ");
             person.Email_Id = Console.ReadLine();
 
             People.Add(person);
@@ -63,89 +63,25 @@ namespace Day_9_AddressBook
             Console.WriteLine("Email Id: " + person.Email_Id);
             Console.WriteLine("-------------------------------------------");
         }
-        public static void Modify()
+        
+        public static void AddContact()
         {
-            if (People.Count != 0)
+            if (People.Count == 0)
             {
-                Console.WriteLine("Enter the First Name of contact to modify its Properties :");
-                string Modified = Console.ReadLine();
-                foreach (var person in People)
-                {
-                    if (person.FirstName.ToUpper() == Modified.ToUpper())
-                    {
-                        while (true)
-                        {
-                            Console.WriteLine("Choose Operation to Perform : ");
-                            Console.WriteLine("1.Change First name ");
-                            Console.WriteLine("2.Change Last name ");
-                            Console.WriteLine("3.Change Address ");
-                            Console.WriteLine("4.Change City");
-                            Console.WriteLine("5.Change State ");
-                            Console.WriteLine("6.Change Pincode ");
-                            Console.WriteLine("7.Change Phone Number");
-                            Console.WriteLine("8.Exit ");
-                            int Check = Convert.ToInt32(Console.ReadLine());
-                            switch (Check)
-                            {
-                                case 1:
-                                    Console.WriteLine("Enter the New First Name: ");
-                                    person.FirstName = Console.ReadLine();
-                                    break;
-                                case 2:
-                                    Console.WriteLine("Enter the New Last Name: ");
-                                    person.LastName = Console.ReadLine();
-                                    break;
-                              
-                                case 3:
-                                    Console.WriteLine("Enter the New Address: ");
-                                    person.Addresses = Console.ReadLine();
-                                    break;
-
-                                case 4:
-                                    Console.WriteLine("Enter the New City: ");
-                                    person.City = Console.ReadLine();
-                                    break;
-
-                                case 5:
-                                    Console.WriteLine("Enter the New State: ");
-                                    person.State = Console.ReadLine();
-                                    break;
-
-                                case 6:
-                                    Console.WriteLine("Enter the New Pin Code: ");
-                                    person.PinCode = Console.ReadLine();
-                                    break;
-
-                                case 7:
-                                    Console.WriteLine("Enter the New Phone Number: ");
-                                    person.PhoneNum = Console.ReadLine();
-                                    break;
-
-                                case 8:
-                                    return;
-
-                            }
-
-                        }
-
-                    }
-                    else
-                    {
-                        Console.WriteLine(">> There is No Such Contact with such First Name...");
-                    }
-
-                }
-
-
+                Console.WriteLine("\n>> You have to create Address Book First...\n");
+                return;
+            }
+            else
+            {
+                GetCustomer();
+                Console.WriteLine("\nConatact Added Successfully....\n");
             }
         }
-
         public static void ListingPeople()
         {
             if (People.Count == 0)
             {
-                Console.WriteLine(">> Address Book is Empty...");
-                Console.ReadKey();
+                Console.WriteLine("\n>> Your Address Book is Empty...\n");
                 return;
             }
            
