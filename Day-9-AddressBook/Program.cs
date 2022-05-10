@@ -6,10 +6,10 @@ Console.WriteLine("---- Welcome To Address Book Application ----\n");
 
 int choice=0;
 
-while(choice!=4)
+while(choice!=5)
 {
 
-    Console.WriteLine("Choose the Operation:- \n1.Create Addressbook \n2.Add New Contact\n3.Display AddressBook Details\n4.Exit\n");
+    Console.WriteLine("Choose the Operation:- \n1.Create Addressbook \n2.Add New Contact\n3.Modify Existing Contact\n4.Display AddressBook Details\n5.Exit\n");
     Console.Write("Enter the choice :- ");
     choice = int.Parse(Console.ReadLine());
 
@@ -27,14 +27,16 @@ while(choice!=4)
                 break;
 
             case 3:
+                Console.WriteLine("\n>>>> Modify Contact Details :-\n");
+                AddressBook.EditConatact();
+                break;
+            
+            case 4:
                 Console.WriteLine("\n>>>> Address Book Details :-\n");
                 AddressBook.ListingPeople();
                 break;
 
-
-
-
-            default:
+        default:
             if (choice >= 5)
             {
                 Console.WriteLine("\n>> Please Enter valid choice.....\n");
