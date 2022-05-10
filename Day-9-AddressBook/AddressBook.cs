@@ -172,6 +172,35 @@ namespace Day_9_AddressBook
         }
 
 
+        public static void DeletePeople()
+        {
+            if (People.Count == 0)
+            {
+                Console.WriteLine("\n>> Your Address Book is Empty...\n");
+                return;
+            }
+            else
+            {
+                Console.Write("Enter the first name of contact you want to delete :- ");
+                string Remove = Console.ReadLine();
+
+                foreach (var person in People.ToList())
+                {
+                    if (person.FirstName.ToUpper() == Remove.ToUpper())
+                    {
+                        People.Remove(person);
+                        Console.WriteLine("\n>> Contact deleted from AddressBook successfully....\n");
+                    }
+                    else
+                    {
+                        Console.WriteLine("\n>> Contact with this name is not present in AddressBook...");
+                    }
+                }
+            }
+
+        }
+
+
 
     }
 }
